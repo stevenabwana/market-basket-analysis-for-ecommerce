@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[61]:
+# In[9]:
 
 
 import numpy as np
@@ -11,28 +11,24 @@ data = pd.read_csv("trxns.csv")
 head= data.head()
 columns = data.columns
 print(head)
-print("-"*100)
-print(columns)
-print("-"*100)
 
 
-# In[71]:
+# In[10]:
 
 
 Ref = data.Ref.unique()
 print("AVAILABLE TRANSACTIONS")
 print(Ref)
-print("-"*100)
 
 
-# In[63]:
+# In[11]:
 
 
 basket = (data.groupby(["Ref","Descr"])["Quantity"]).sum().unstack().reset_index().fillna(0).set_index('Ref')
 basket
 
 
-# In[64]:
+# In[12]:
 
 
 def hot_encode(x):
@@ -42,7 +38,7 @@ def hot_encode(x):
         return 1
 
 
-# In[65]:
+# In[13]:
 
 
 basket_encoded = basket.applymap(hot_encode)
@@ -52,7 +48,7 @@ print("ENCODED")
 print(basket)
 
 
-# In[78]:
+# In[14]:
 
 
 frq_items = apriori(basket, min_support = 0.02, use_colnames = True)
@@ -60,15 +56,9 @@ print("Frequent Items")
 print(frq_items)
 
 
-# In[79]:
+# In[15]:
 
 
 rules = association_rules(frq_items, metric="lift", min_threshold=1)
 rules.head()
-
-
-# In[ ]:
-
-
-
 
