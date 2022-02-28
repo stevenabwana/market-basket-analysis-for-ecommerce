@@ -1,4 +1,11 @@
 # market-basket-analysis-for-ecommerce
+Registration Numbers: 0410/2017, 0387/2017, 388/2017, 405/2017.
+
+**Folders**
+dataset: contains the dataset used.
+ecm: contains our local ecommerce site.
+marketba1.py: our apriori algorithm file.
+
 the project was to build an e commerce recommendation engine that uses apriori algorithm to establish associations between for frequently bought items. 
 the algorithm will then recommend to customers products which were bought in the same cart by other customers depending on the support value of a given item in an itemsset.
 
