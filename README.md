@@ -17,7 +17,7 @@ other challenges we experienced were;
 2. Our dataset was too little to use therefore causing the code not to run as expected hence having to use a public one
 
 
-**Steps in perfromin market basket anaysis using apriori**
+**Steps in performing market basket anaysis using apriori**
 we install all the required libraries which include; apriori and mlxtend.
 we load our dataset using pd.read_csv
 we then view the top most part of our data using data.head function
